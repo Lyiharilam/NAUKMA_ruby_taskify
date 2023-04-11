@@ -1,0 +1,8 @@
+@import "../../scss/mixins.scss";
+footer {
+    background: #000;
+    min-height: 82px;
+    .footer-item {
+        @include secondary-text(#fff);
+    }
+}

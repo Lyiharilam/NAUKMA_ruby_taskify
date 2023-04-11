@@ -1,17 +1,17 @@
 *.gem
 *.rbc
-/.config
-/coverage/
-/InstalledFiles
-/pkg/
-/spec/reports/
-/spec/examples.txt
-/test/tmp/
-/test/version_tmp/
-/tmp/
+/api/.config
+/api/coverage/
+/api/InstalledFiles
+/api/pkg/
+/api/spec/reports/
+/api/spec/examples.txt
+/api/test/tmp/
+/api/test/version_tmp/
+/api/tmp/
 
 # Used by dotenv library to load environment variables.
-# .env
+.env
 
 # Ignore Byebug command history file.
 .byebug_history
@@ -33,15 +33,15 @@ build-iPhoneSimulator/
 # vendor/Pods/
 
 ## Documentation cache and generated files:
-/.yardoc/
-/_yardoc/
-/doc/
-/rdoc/
+/api/.yardoc/
+/api/_yardoc/
+/api/doc/
+/api/rdoc/
 
 ## Environment normalization:
-/.bundle/
-/vendor/bundle
-/lib/bundler/man/
+/api/.bundle/
+/api/vendor/bundle
+/api/lib/bundler/man/
 
 # for a library or gem, you might want to ignore these files since the code is
 # intended to run in multiple environments; otherwise, check them in:
@@ -54,3 +54,27 @@ build-iPhoneSimulator/
 
 # Used by RuboCop. Remote config files pulled in from inherit_from directive.
 # .rubocop-https?--*
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/frontend/node_modules
+/frontend/.pnp
+.pnp.js
+
+# testing
+/frontend/coverage
+
+# production
+/frontend/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -1,0 +1,107 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+$spacers: (
+  0: 0,
+  1: (
+    $spacer * 0.25,
+  ),
+  2: (
+    $spacer * 0.5,
+  ),
+  3: $spacer,
+  4: (
+    $spacer * 1.5,
+  ),
+  5: (
+    $spacer * 3,
+  ),
+  6: (
+    $spacer * 5,
+  ),
+  7: (
+    $spacer * 6,
+  ),
+  8: (
+    $spacer * 9,
+  ),
+  9: (
+    $spacer * 12,
+  ),
+  10: (
+    $spacer * 13.5,
+  ),
+);
+@import "~bootstrap/scss/bootstrap";
+@import "./scss/mixins.scss";
+body {
+  background: $main-bg-color;
+}
+main {
+  background: $main-bg-color;
+  min-height: 91vh;
+  button {
+    border-radius: 12px;
+    transition: all 0.2s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .easy-accounting-block {
+    height: 600px;
+    .fixed-image-bg {
+      background-image: url("./assets/images/management.png");
+      height: 100%;
+      width: 100%;
+      background-attachment: fixed;
+      background-position: center 17px;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      p {
+        text-shadow: -1px 1px 2px #000, 1px 1px 2px #000, 1px -1px 0 #000, -1px -1px 0 #000;
+        @include main-text(40px, normal, 500, #fff);
+      }
+    }
+  }
+  .application-form {
+    background: $secondary-bg-color;
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid $text-color;
+  }
+  .main-page-slogan {
+    &__short-description {
+      @include secondary-text();
+    }
+    &__full-description {
+      @include main-text(56px, normal, 500);
+    }
+    button {
+      max-width: 150px;
+    }
+  }
+  .reasons-to-choose-us {
+    &__title {
+      @include main-text(56px, normal, 500);
+    }
+    &__cards {
+      &__instance {
+        padding: 20px;
+        background: $secondary-bg-color;
+        border-radius: 12px;
+        border: 1px solid #fff;
+
+        &__title {
+          @include main-text(46px, normal, 600);
+        }
+        &__text {
+          @include secondary-text();
+        }
+      }
+    }
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
