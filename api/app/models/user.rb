@@ -6,4 +6,6 @@ class User < ApplicationRecord
   validates :password,
             length: { minimum: 6 },
             if: -> { new_record? || !password.nil? }
+  has_many :team_members
+  has_many :teams, through: :team_members
 end
