@@ -15,7 +15,7 @@ const RegisterForm = () => {
     const validationSchema = Yup.object().shape({
         username: Yup.string().required("Username is required"),
         email: Yup.string().email().required("Email is required"),
-        password: Yup.string().required("Password is required")
+        password: Yup.string().required("Password is required").test('len', 'Password is too short (minimum is 6 characters)', val => val.length >= 6)
     });
 
     const formOptions = { resolver: yupResolver(validationSchema) };
