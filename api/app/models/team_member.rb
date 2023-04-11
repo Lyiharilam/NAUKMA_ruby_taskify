@@ -1,4 +1,4 @@
 class TeamMember < ApplicationRecord
-    belongs_to :team
-    belongs_to :user
+    belongs_to :team, foreign_key: true
+    belongs_to :user, foreign_key: true
 end

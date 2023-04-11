@@ -19,17 +19,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_163023) do
     t.string "description"
     t.string "deadline"
     t.string "status"
-    t.integer "team_id"
+    t.bigint "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_tasks_on_team_id"
   end
 
   create_table "team_members", force: :cascade do |t|
     t.string "role"
-    t.integer "user_id"
-    t.integer "team_id"
+    t.bigint "team_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_team_members_on_team_id"
+    t.index ["user_id"], name: "index_team_members_on_user_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -47,4 +50,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_11_163023) do
     t.datetime "updated_at", precision: nil, null: false
   end
 
+  add_foreign_key "tasks", "teams"
+  add_foreign_key "team_members", "teams"
+  add_foreign_key "team_members", "users"
 end

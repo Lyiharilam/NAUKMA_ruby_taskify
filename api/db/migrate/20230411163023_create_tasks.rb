@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :deadline
       t.string :status
-      t.integer :team_id
+      t.belongs_to :team, foreign_key: true
       t.timestamps
     end
   end
