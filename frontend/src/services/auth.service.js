@@ -12,12 +12,16 @@ const login = async (email, password) => {
     return response.data;
 };
 
-const register = (username, email, password) => {
-    return http.post("/users", {
+const register = async (username, email, password) => {
+    let serverResponse = null
+    const response = await http.post("/users", {
         username,
         email,
         password,
+    }).catch(error => {
+        serverResponse = { isError: true, message: error.response.data }
     });
+    return serverResponse ? serverResponse : response;
 };
 
 const logout = () => {

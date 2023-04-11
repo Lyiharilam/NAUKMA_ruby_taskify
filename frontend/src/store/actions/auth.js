@@ -45,15 +45,15 @@ export const register = (username, email, password) => (dispatch) => {
             dispatch({
                 type: REGISTER_SUCCESS,
             });
-            return Promise.resolve();
+            return Promise.resolve(data);
         },
         (error) => {
             dispatch({
                 type: REGISTER_FAIL,
             });
-            return Promise.reject();
+            return Promise.reject(error);
         }
-    );
+    )
 };
 
 export const logout = () => (dispatch) => {
